@@ -133,11 +133,11 @@ def newCanvas(filename, num):
 # as a tuple to know where to continue the spiral
 def drawOneCircle(canvas, circle_data):
 	theta = float(0)
-	rad_calculation = 0.0
 	(x_last, y_last) = circle_data.points
 	radius = circle_data.radius
 	index = circle_data.index
 	last_cycle = circle_data.end
+	rad_calculation = radius
 
 	while theta < math.pi*2:
 		if not last_cycle:
@@ -148,7 +148,7 @@ def drawOneCircle(canvas, circle_data):
 		y_val = 6*scale_num-rad_calculation*math.sin(theta)
 
 		if ((x_last - x_val)**2 +(y_last-y_val)**2)>min_distance**2:
-			if x_last != 0.0 and y_last != 0.0:
+			if (x_last != 0.0 and y_last != 0.0) and (x_val != 0.0 and y_val != 0.0):
 				canvas.line(x_last, y_last, x_val, y_val)
 			x_last = x_val
 			y_last = y_val
@@ -197,7 +197,7 @@ def drawSpiral((points_data, points_length)):
 			c.save()
 			print("Finished a pdf")
 			file_number = str(int(num_grooves / num_grooves_per_file))
-			c = newCanvas(stripped_filename+file_number+".pdf")
+			c = newCanvas(stripped_filename,file_number)
 		last_points = cur_data.points
 		radius = cur_data.radius
 		index = cur_data.index

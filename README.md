@@ -1,4 +1,4 @@
-# Record Generation
+# Record Generation v.1.0
 A repository that accumulates various ways to technologically generate records.
 
 ## Usage
@@ -23,6 +23,11 @@ PDF may take several minutes, depending on the computer. It outputs a group of f
 
 These scripts accept ONLY .mp3 and .wav input. Any other file extension will crash them.
 
+The audio file being run must either A) be in the same directory as the python script or B) use a relative path so that the script can access it correctly.
+
 ## Credits
 Python code written by Michelle Ross and Aaron Schaer.
-This project builds directly off of Amanda Ghassaei's code (originally in Processing) and uses much of the same coding logic.
+
+This project builds directly off of Amanda Ghassaei's code (originally in Processing) and uses much of her coding logic.
+
+
